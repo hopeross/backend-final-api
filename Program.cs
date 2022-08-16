@@ -1,4 +1,5 @@
 using social_api.Migrations;
+using social_api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSqlite<SocialDbContext>("Data Source=socialAPI.db");
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
