@@ -6,7 +6,7 @@ public class SocialDbContext : DbContext
 {
     public DbSet<Post> Post { get; set; }
     public DbSet<Comment> Comment { get; set; }
-    public DbSet<User> User { get; set; }
+    public DbSet<User> Users { get; set; }
 
     public SocialDbContext(DbContextOptions<SocialDbContext> options): base(options) {}
     
