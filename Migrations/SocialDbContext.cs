@@ -19,8 +19,6 @@ public class SocialDbContext : DbContext
             entity.Property(e => e.PostText).IsRequired();
             entity.Property(e => e.OwnerId).IsRequired();
             entity.Property(e => e.CreatedOn).IsRequired();
-            entity.Property(e => e.UpdatedOn);
-            entity.Property(e => e.DeletedOn);
             entity.Property(e => e.CommentId);
         });
 
@@ -41,8 +39,6 @@ public class SocialDbContext : DbContext
             entity.Property(e => e.CommentText).IsRequired();
             entity.Property(e => e.OwnerId).IsRequired();
             entity.Property(e => e.CreatedOn).IsRequired();
-            entity.Property(e => e.UpdatedOn);
-            entity.Property(e => e.DeletedOn); 
         });
     }
 }

@@ -17,8 +17,5 @@ public class Post
     [Required]
     public string CreatedOn { get; set; } = DateTime.Now.ToString();
 
-    public string? UpdatedOn { get; set; } = DateTime.Now.ToString();
-    public string? DeletedOn { get; set; } = DateTime.Now.ToString();
-
     public string? CommentId { get; set; }
 }

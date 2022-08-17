@@ -46,6 +46,24 @@ public class AuthService : IAuthService
         return BuildToken(user);
     }
 
+    public User UpdateUser(User newUser)
+    {
+        var originalUser = _context.Users.Find(newUser);
+        if (originalUser != null) {
+            originalUser.FirstName = newUser.FirstName;
+            originalUser.LastName = newUser.LastName;
+            originalUser.Location = newUser.Location;
+            originalUser.Title = newUser.Title;
+        }
+        _context.SaveChanges();
+        return originalUser;
+    }
+
+    public User GetUserById(int userId)
+    {
+        return _context.Users.FirstOrDefault(u => u.UserId == userId);
+    }
+
     private string BuildToken(User user) {
         var secret = _config.GetValue<String>("TokenSecret");
         var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
