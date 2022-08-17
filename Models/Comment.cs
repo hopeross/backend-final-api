@@ -16,6 +16,6 @@ public class Comment {
     [Required]
     public string CreatedOn { get; set; }
 
-    public string UpdatedOn { get; set; }
-    public string DeletedOn { get; set; }
+    public string? UpdatedOn { get; set; }
+    public string? DeletedOn { get; set; }
 }

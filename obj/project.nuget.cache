@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gsSqKSQU1hPXgZ4J1v9EeycqwZTbms4CuChUMg/+JWnGJpDQ+I9kopIT0BEhqhIhDdkDAIgrKUlvKyi0Cnk+eA==",
+  "dgSpecHash": "qxD4uWcG/5qMHDaEVIeVwWT0ExGQfp5tKtMDhUhl0o8BQ1/xfODRjWas1GrW/yEAQo5ENMurQTV4oX3653GQxA==",
   "success": true,
   "projectFilePath": "/Users/hope.ross/Desktop/bethel-tech/backend-dotnet/final-project/social-api/social-api.csproj",
   "expectedPackageFiles": [
     "/Users/hope.ross/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/hope.ross/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.8/microsoft.aspnetcore.authentication.jwtbearer.6.0.8.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/microsoft.data.sqlite.core/6.0.8/microsoft.data.sqlite.core.6.0.8.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/microsoft.entityframeworkcore/6.0.8/microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
@@ -29,6 +30,8 @@
     "/Users/hope.ross/.nuget/packages/microsoft.identitymodel.abstractions/6.22.0/microsoft.identitymodel.abstractions.6.22.0.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.22.0/microsoft.identitymodel.jsonwebtokens.6.22.0.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/microsoft.identitymodel.logging/6.22.0/microsoft.identitymodel.logging.6.22.0.nupkg.sha512",
+    "/Users/hope.ross/.nuget/packages/microsoft.identitymodel.protocols/6.10.0/microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "/Users/hope.ross/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.10.0/microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/microsoft.identitymodel.tokens/6.22.0/microsoft.identitymodel.tokens.6.22.0.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/hope.ross/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.6/sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",

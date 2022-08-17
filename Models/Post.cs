@@ -12,13 +12,13 @@ public class Post
     public string PostText {get; set; }
 
     [Required]
-    public string OwnerId { get; set; }
+    public string OwnerId { get; set; } = "1";
 
     [Required]
-    public string CreatedOn { get; set; }
+    public string CreatedOn { get; set; } = DateTime.Now.ToString();
 
-    public string UpdatedOn { get; set; }
-    public string DeletedOn { get; set; }
+    public string? UpdatedOn { get; set; } = DateTime.Now.ToString();
+    public string? DeletedOn { get; set; } = DateTime.Now.ToString();
 
-    public string CommentId { get; set; }
+    public string? CommentId { get; set; }
 }

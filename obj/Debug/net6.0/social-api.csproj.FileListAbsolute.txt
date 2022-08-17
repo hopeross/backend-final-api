@@ -58,3 +58,6 @@
 /Users/hope.ross/Desktop/bethel-tech/backend-dotnet/final-project/social-api/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
 /Users/hope.ross/Desktop/bethel-tech/backend-dotnet/final-project/social-api/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /Users/hope.ross/Desktop/bethel-tech/backend-dotnet/final-project/social-api/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/hope.ross/Desktop/bethel-tech/backend-dotnet/final-project/social-api/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/hope.ross/Desktop/bethel-tech/backend-dotnet/final-project/social-api/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/Users/hope.ross/Desktop/bethel-tech/backend-dotnet/final-project/social-api/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
