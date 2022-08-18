@@ -1,6 +1,8 @@
 using social_api.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using social_api.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace social_api.Controllers;
 
@@ -47,6 +49,43 @@ public class AuthController : ControllerBase
 
         return Ok(token);
     }
+
+
+    [HttpGet]
+    [Route("current")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public ActionResult<User> GetCurrentUser()
+    {
+        if (HttpContext.User == null)
+        {
+            return Unauthorized();
+        }
+
+
+
+        var userIdClaim = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserId");
+        Console.WriteLine(userIdClaim);
+
+
+
+
+        var userId = Int32.Parse(userIdClaim.Value);
+
+        var user = _authService.GetUserById(userId);
+
+        if (user == null)
+        {
+            return Unauthorized();
+        }
+
+        return Ok(user);
+
+
+
+
+    }
+
+
 
     [HttpGet]
     [Route("{userId:int}")]

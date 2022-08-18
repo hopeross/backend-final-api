@@ -14,6 +14,14 @@ public class PostRepository: IPostRepository
 
     public Post CreatePost(Post newPost)
     {
+
+
+
+
+
+
+
+        
         _context.Post.Add(newPost);
         _context.SaveChanges();
         return newPost;
