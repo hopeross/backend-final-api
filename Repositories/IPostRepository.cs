@@ -9,4 +9,5 @@ public interface IPostRepository
     Post CreatePost(Post newPost);
     Post UpdatePost(Post newPost);
     void DeletePostById(int postId);
+    IEnumerable<Post> GetPostsByUserId(int userId);
 }

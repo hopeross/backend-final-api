@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace social_api.Models;
 
-public class User 
+public class User
 {
     [JsonIgnore]
     public int UserId { get; set; }

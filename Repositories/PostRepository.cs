@@ -14,14 +14,6 @@ public class PostRepository: IPostRepository
 
     public Post CreatePost(Post newPost)
     {
-
-
-
-
-
-
-
-        
         _context.Post.Add(newPost);
         _context.SaveChanges();
         return newPost;
@@ -44,6 +36,12 @@ public class PostRepository: IPostRepository
     public Post? GetPostById(int postId)
     {
         return _context.Post.SingleOrDefault(p => p.PostId == postId);
+    }
+
+    public IEnumerable<Post> GetPostsByUserId(int userId)
+    {
+        var postList = _context.Post.Where(p => p.OwnerId == userId).ToList();
+        return postList;
     }
 
     public Post UpdatePost(Post newPost)

@@ -12,8 +12,9 @@ public class Post
     public string PostText {get; set; }
 
     [Required]
-    public string OwnerId { get; set; } = "1";
+    public int OwnerId { get; set; }
 
+    //TODO This works but is this the right place to do assignment?
     [Required]
     public string CreatedOn { get; set; } = DateTime.Now.ToString();
 

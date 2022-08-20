@@ -19,6 +19,8 @@ public class AuthController : ControllerBase
         _authService = service;
     }
 
+    //Authorization first
+
     [HttpPost]
     [Route("signup")]
     public ActionResult CreateUser(User user)
@@ -33,6 +35,7 @@ public class AuthController : ControllerBase
 
     [HttpGet]
     [Route("signin")]
+    //TODO: Learn how to do this more gooder because this transmits passwords unencrypted 
     public ActionResult<string> SignIn(string email, string password)
     {
         if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
@@ -50,6 +53,7 @@ public class AuthController : ControllerBase
         return Ok(token);
     }
 
+    //User Operations Second.  Should have split this into a different controller.
 
     [HttpGet]
     [Route("current")]
@@ -61,16 +65,8 @@ public class AuthController : ControllerBase
             return Unauthorized();
         }
 
-
-
         var userIdClaim = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserId");
-        Console.WriteLine(userIdClaim);
-
-
-
-
         var userId = Int32.Parse(userIdClaim.Value);
-
         var user = _authService.GetUserById(userId);
 
         if (user == null)
@@ -79,13 +75,7 @@ public class AuthController : ControllerBase
         }
 
         return Ok(user);
-
-
-
-
     }
-
-
 
     [HttpGet]
     [Route("{userId:int}")]
@@ -102,12 +92,25 @@ public class AuthController : ControllerBase
 
     [HttpPut]
     [Route("{userId:int}")]
-    public ActionResult<Post> UpdateUser(User user)
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public ActionResult<User> UpdateUser(User editUser)
     {
-        if (!ModelState.IsValid || user == null)
+        if (HttpContext.User == null) {
+            return Unauthorized();
+        }
+
+        var userIdClaim = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserId");
+        var userId = Int32.Parse(userIdClaim.Value);
+
+        if (!ModelState.IsValid || editUser == null)
         {
             return BadRequest();
         }
-        return Ok(_authService.UpdateUser(user));
+
+        if (userId == editUser.UserId) {
+            return Ok(_authService.UpdateUser(editUser));   
+        } else {
+            return Unauthorized();
+        }
     }
 }
