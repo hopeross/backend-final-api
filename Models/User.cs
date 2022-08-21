@@ -5,7 +5,6 @@ namespace social_api.Models;
 
 public class User
 {
-    [JsonIgnore]
     public int UserId { get; set; }
 
     [Required]

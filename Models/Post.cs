@@ -5,7 +5,6 @@ namespace social_api.Models;
 
 public class Post
 {
-    [JsonIgnore]
     public int PostId { get; set; }
 
     [Required]

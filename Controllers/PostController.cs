@@ -77,8 +77,6 @@ public class PostController : ControllerBase
             return Unauthorized();
         }
 
-        Console.WriteLine(newPost);
-
         var userIdClaim = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserId");
         var userId = int.Parse(userIdClaim.Value);
 
@@ -86,9 +84,6 @@ public class PostController : ControllerBase
         {
             return BadRequest();
         }
-
-        Console.WriteLine(userId);
-        Console.WriteLine(newPost.OwnerId);
 
         if (userId == newPost.OwnerId)
         {
